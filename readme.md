@@ -4,8 +4,8 @@ Jail Guard
 An attempt to Execute User Provided JavaScript securly. Jail Guard,
 
 * runs scripts on a seperate process
-* detect never ending loops
-* block `eval`, `setTimeout` and `setInterval`
+* detects never ending loops
+* blocks `eval`, `setTimeout` and `setInterval`
 
 Install
 -------
