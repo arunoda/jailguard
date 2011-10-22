@@ -74,3 +74,39 @@ exports.testRunNormalForLoopDetect = function(test) {
 	});
 
 };
+
+exports.testNoEval = function(test) {
+	
+	var jg = jailguard.create({timeout: 100});
+	var js = "var aa = 10; eval('aa=100;') ";
+	var env = {aa: 0, ccd: null}
+	jg.run(js, env, function(err) {
+		test.ok(err);
+		test.equal(err.code, 'EVAL_NOT_SUPPORTED');
+		test.done();
+	});
+};
+
+exports.testNoSetTimeout = function(test) {
+	
+	var jg = jailguard.create({timeout: 100});
+	var js = "var aa = 10; setTimeout(function() {aa=100}, 0); ";
+	var env = {aa: 0, ccd: null}
+	jg.run(js, env, function(err) {
+		test.ok(err);
+		test.equal(err.code, 'SETTIMEOUT_NOT_SUPPORTED');
+		test.done();
+	});
+};
+
+exports.testNoSetInterval = function(test) {
+	
+	var jg = jailguard.create({timeout: 100});
+	var js = "var aa = 10; setInterval(function() {aa=100}, 0); ";
+	var env = {aa: 0, ccd: null}
+	jg.run(js, env, function(err) {
+		test.ok(err);
+		test.equal(err.code, 'SETINTERVAL_NOT_SUPPORTED');
+		test.done();
+	});
+};
