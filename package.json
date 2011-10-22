@@ -9,6 +9,7 @@
     "author": "Arunoda Susiripala <arunoda.susiripala@gmail.com>",
     "homepage": "http://kodeincloud.com",
     "dependencies": {
+        "node-fork": ">= 0.1.1"
      },
 
     "devDependencies": {
