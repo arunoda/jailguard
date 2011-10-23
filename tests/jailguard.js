@@ -32,6 +32,25 @@ exports.testKillAndRestart = function(test) {
 	}, 10);
 };
 
+exports.testJoin = function(test) {
+	
+	var jg = jailguard.create();
+	var env = {
+		args: {
+			drivers: ['100', '10']
+		},
+		aa: 0
+	};
+
+	var code = "aa = args.drivers.join('');"
+	jg.run(code, env, function(err) {
+		
+		test.ok(!err);
+		test.equal('10010', env.aa);
+		test.done();
+	});
+}
+
 /// Tests from jail.js
 
 exports.testRunSuccess = function(test) {

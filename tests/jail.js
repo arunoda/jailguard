@@ -110,3 +110,17 @@ exports.testNoSetInterval = function(test) {
 		test.done();
 	});
 };
+
+exports.testFunctionConstructor = function(test) {
+
+	var jg = jailguard.create();
+	var js = "var fn = new Function('aa=100;'); fn();";
+	var env = {aa: 10};
+
+	jg.run(js, env, function(err) {
+
+		test.equal(env.aa, 10);
+		test.equal(err.code, 'FUNCTION_CONSTRUCTOR_DETECTED');
+		test.done();
+	});
+};
