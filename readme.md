@@ -6,6 +6,7 @@ An attempt to Execute User Provided JavaScript securly. Jail Guard,
 * runs scripts on a seperate process
 * detects never ending loops
 * blocks `eval`, `setTimeout` and `setInterval`
+* blocks Function Constructor
 
 Install
 -------
