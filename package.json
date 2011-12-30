@@ -1,6 +1,6 @@
 {
     "name": "jailguard",
-    "version": "0.1.7",
+    "version": "0.1.8",
     "directories": {
         "lib": "./lib"
     },
@@ -8,9 +8,6 @@
     "description": "Safe Way to Run User Provided JavaScript with NodeJS",
     "author": "Arunoda Susiripala <arunoda.susiripala@gmail.com>",
     "homepage": "http://kodeincloud.com",
-    "dependencies": {
-        "node-fork": ">= 0.1.1"
-     },
 
     "devDependencies": {
      }
